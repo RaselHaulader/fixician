@@ -10,7 +10,7 @@ const Navbar = () => {
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <a class="navbar-brand fs-1 text-primary fw-bolder" href="#">Fixician</a>
+                        <a class="navbar-brand fs-2 text-primary fw-bolder" href="#">Fixician</a>
                         <ul class="navbar-nav  ms-auto mb-2 mb-lg-0">
                             <Link to='/home '>
                                 <li class="nav-item mx-2">
