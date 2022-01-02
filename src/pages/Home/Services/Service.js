@@ -16,7 +16,6 @@ const Service = ({service}) => {
                 
                 <Button className="mt-2 fw-bold" variant="secondary">Read More</Button>
             </div>
-            
         </div>
         
     );
