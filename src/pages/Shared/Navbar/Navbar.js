@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import './Navbar.css';
 const Navbar = () => {
     return (
         <div>
@@ -10,17 +10,31 @@ const Navbar = () => {
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <a class="navbar-brand" href="#">Fixician</a>
+                        <a class="navbar-brand fs-1 text-primary fw-bolder" href="#">Fixician</a>
                         <ul class="navbar-nav  ms-auto mb-2 mb-lg-0">
                             <Link to='/home '>
                                 <li class="nav-item mx-2">
                                     Home
                                 </li>
                             </Link>
-
                             <Link to='/explore'>
                                 <li class="nav-item mx-2">
                                     Explore
+                                </li>
+                            </Link>
+                            <Link to='/home '>
+                                <li class="nav-item mx-2">
+                                    About us
+                                </li>
+                            </Link>
+                            <Link to='/home '>
+                                <li class="nav-item mx-2">
+                                    Contact
+                                </li>
+                            </Link>
+                            <Link to='/home '>
+                                <li class="nav-item mx-2">
+                                    LogIn
                                 </li>
                             </Link>
                         </ul>

@@ -1,0 +1,10 @@
+.navbar-nav a{
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+}
+.navbar-nav a:hover{
+    background-color: blue;
+    color: white;
+}
