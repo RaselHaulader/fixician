@@ -1,10 +1,14 @@
 import "./App.css";
-import Home from "./pages/Home/Home/Home";
+import Services from "./pages/Home/Services/Services";
+
 
 function App() {
   return (
     <div className="App">
-      <Home></Home>
+      <h1>Fixician</h1>
+      <h2>MD. SUJAN SHAIKH</h2>
+      <h2>Salman</h2>
+      <Services></Services>
     </div>
   );
 }
