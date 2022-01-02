@@ -12,7 +12,7 @@
     background-image: url('../../../Images/counter/counter-wave.png');
     min-height: 200px;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+  
 }
 .counter-item{
     display: inline-block;
