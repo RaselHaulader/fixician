@@ -8,7 +8,7 @@ const Service = ({service}) => {
     return (
         <div className='service-container'>
             <div>
-                <h2 className='text-2xl font-semibold'>{name}</h2>
+                <h2 className='text-2xl font-semibold'>Name:{name}</h2>
                 <p>{description}</p>
                 <Button></Button>
             </div>
