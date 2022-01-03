@@ -12,22 +12,6 @@ const Dashboard = () => {
           <div className=" col-md-4">
             <div className="bashboard-manu p-1">
               <div className="all-menu mt-5">
-                {/* user profile start here */}
-                <div className="all-order">
-                  <li className="admin-menu p-2">
-                    <NavLink
-                      style={{
-                        textDecoration: "none",
-                        color: "#333",
-                        paddingLeft: "10px",
-                        background: "none",
-                      }}
-                      to="/"
-                    >
-                      Home Page
-                    </NavLink>
-                  </li>
-                </div>
                 <div className="all-order">
                   <li className="admin-menu p-2">
                     <NavLink

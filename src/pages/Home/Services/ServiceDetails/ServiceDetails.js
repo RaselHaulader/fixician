@@ -3,8 +3,11 @@ import { useParams } from "react-router";
 import { useForm } from "react-hook-form";
 import Navbar from "../../../Shared/Navbar/Navbar";
 import "./ServiceDetails.css";
+import { useSelector } from "react-redux";
 
 const ServiceDetails = () => {
+  const user = useSelector((state) => state.user.userAuth);
+  console.log(user);
   const { id } = useParams();
   console.log(id);
   const [service, setService] = useState({});
@@ -22,19 +25,20 @@ const ServiceDetails = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    const orderData = {
-      ...data,
-    };
-    console.log(orderData);
+    if (data.email === "") {
+      data.email = user.email;
+    } else if (data.displayName === "") {
+      data.displayName = user.displayName;
+    } else if (data.price === "") {
+      data.price = service.price;
+    }
     fetch(`http://localhost:5000/usersOrder`, {
       method: "post",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(orderData),
+      body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
+      .then((data) => {});
   };
 
   return (
@@ -61,13 +65,13 @@ const ServiceDetails = () => {
               <form onSubmit={handleSubmit(onSubmit)}>
                 <input
                   {...register("email")}
-                  defaultValue=""
+                  defaultValue={user?.email}
                   placeholder="email"
                   className="p-1 m-2 w-100"
                 />
                 <input
-                  {...register("text")}
-                  defaultValue=""
+                  {...register("displayName")}
+                  defaultValue={user?.displayName}
                   placeholder="name"
                   className="p-1 m-2 w-100"
                 />
@@ -93,7 +97,7 @@ const ServiceDetails = () => {
                 />
                 <input
                   {...register("price")}
-                  defaultValue=""
+                  defaultValue={service?.price}
                   placeholder="price"
                   className="p-1 m-2 w-100"
                 />
