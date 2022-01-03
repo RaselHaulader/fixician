@@ -1,14 +1,10 @@
 import "./App.css";
+import AboutUs from "./pages/AboutUs/AboutUs";
 import Home from "./pages/Home/Home/Home";
-import {
-  BrowserRouter,
-  Routes,
-  Route
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Explore from "./pages/Explore/Explore";
 import Login from "./pages/Login/Login/Login";
 import Register from "./pages/Login/Register/Register";
-
 
 function App() {
   return (
@@ -19,9 +15,9 @@ function App() {
         <Route path="/login" element={<Login />}/>
         <Route path="/register" element={<Register />}/>
         <Route path="/explore" element={<Explore />} />
+        <Route path="/aboutUs" element={<AboutUs />} />
       </Routes>
     </BrowserRouter>
-
   );
 }
 
