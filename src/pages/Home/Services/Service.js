@@ -8,7 +8,10 @@ const Service = ({service}) => {
     return (
         <div className='service-container'>
             <div>
-                <img className='img-fluid w-100' src={img} alt="" />
+                <h2 className='text-2xl font-semibold'>Name:{name}</h2>
+                <p>{description}</p>
+                <Button></Button>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni aperiam cupiditate sed sint, perspiciatis error officia, inventore ad, a beatae ex quas sit repellendus rem deserunt saepe in soluta cum!</p>
             </div>
             <div className="info-container">
                 <h2 className='fw-bold'>{name}</h2>
