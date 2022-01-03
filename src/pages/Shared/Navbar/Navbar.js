@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import useFirebase from "../../../Hooks/useFirebase";
 import "./Navbar.css";
 const Navbar = () => {
-  const { logOut } = useFirebase()
-  const user = useSelector(state => state.user.userAuth)
+  const { logOut } = useFirebase();
+  const user = useSelector((state) => state.user.userAuth);
   return (
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -41,15 +41,17 @@ const Navbar = () => {
               <Link to="/dashboard ">
                 <li class="nav-item mx-2">Dashboard</li>
               </Link>
-              <Link to="/serviceDetails ">
-                <li class="nav-item mx-2">Service Details</li>
-              </Link>
-              {!user.email && <Link to="/login ">
-                <li class="nav-item mx-2">Login</li>
-              </Link>}
+              {!user.email && (
+                <Link to="/login ">
+                  <li class="nav-item mx-2">Login</li>
+                </Link>
+              )}
 
-              {user?.email && <a onClick={logOut} class="nav-item mx-2">LogOut</a>}
-
+              {user?.email && (
+                <a onClick={logOut} class="nav-item mx-2">
+                  LogOut
+                </a>
+              )}
             </ul>
           </div>
         </div>
