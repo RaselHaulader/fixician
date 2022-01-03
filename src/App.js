@@ -23,7 +23,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard/userProfile" element={<UserProfile />} />
         <Route path="/dashboard/userServices" element={<UserServices />} />
-        <Route path="/serviceDetails" element={<ServiceDetails />} />
+        <Route path="/allServices/:id" element={<ServiceDetails />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
