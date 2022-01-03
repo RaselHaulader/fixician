@@ -6,14 +6,14 @@ import "./ServiceDetails.css";
 
 const ServiceDetails = () => {
   const { id } = useParams();
-  const [data, setData] = useState([]);
+  console.log(id);
+  const [service, setService] = useState({});
   useEffect(() => {
-    fetch("/services.json")
+    fetch(`http://localhost:5000/allServices/${id}`)
       .then((res) => res.json())
-      .then((result) => {
-        const allDetails = result?.find((details) => details.id == id);
-        setData(allDetails);
-        console.log(allDetails);
+      .then((data) => {
+        setService(data);
+        console.log(data);
       });
   }, [id]);
   const {
@@ -36,11 +36,15 @@ const ServiceDetails = () => {
           <div className="col-md-8">
             <div className="details">
               <div className="details-img">
-                <img class="img-fluid" src={data?.imgBack} alt="details-img" />
+                <img
+                  className="img-fluid"
+                  src={service?.imgBack}
+                  alt="details-img"
+                />
               </div>
-              <h3 className="py-3">{data?.name}</h3>
-              <strong>Price: ${data?.price}</strong>
-              <p className="py-3">{data?.description}</p>
+              <h3 className="py-3">{service?.name}</h3>
+              <strong>Price: ${service?.price}</strong>
+              <p className="py-3">{service?.description}</p>
             </div>
           </div>
           <div className="col-md-4">
