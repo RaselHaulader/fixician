@@ -67,7 +67,7 @@ const ServiceDetails = () => {
                 />
                 <input
                   {...register("text")}
-                  defaultValue="git"
+                  defaultValue=""
                   placeholder="name"
                   className="p-1 m-2 w-100"
                 />
