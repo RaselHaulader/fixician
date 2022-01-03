@@ -33,7 +33,7 @@ const ServiceDetails = () => {
           <div className="col-md-7">
             <div className="details">
               <div className="details-img">
-                <img class="img-fluid" src={data?.imgBack} alt="" />
+                <img class="img-fluid" src={data?.imgBack} alt="details-img" />
               </div>
               <h3 className="py3">{data?.name}</h3>
               <strong className="py3">Price: ${data?.price}</strong>
