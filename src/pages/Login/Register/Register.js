@@ -4,9 +4,11 @@ import { Button, Form } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
 import register from '../../../Images/Register/register.jpg';
+import Navbar from '../../Shared/Navbar/Navbar';
 const Register = () => {
     return (
         <div>
+            <Navbar></Navbar>
             <h1 className='text-center fw-bold fs-2 mt-5 mb-3'>Please Register Below!</h1>
             <div className='register-container'>
                 <div>

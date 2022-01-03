@@ -3,10 +3,12 @@ import './Login.css';
 import login from '../../../Images/Login/login.jpg';
 import { Button, Form } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import Navbar from '../../Shared/Navbar/Navbar';
 
 const Login = () => {
     return (
         <div>
+            <Navbar></Navbar>
             <h1 className='text-center fw-bold fs-2 mt-5 mb-3'>Please Login!</h1>
             <div className='login-container'>
                 <div>
