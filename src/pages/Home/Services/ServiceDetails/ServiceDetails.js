@@ -13,7 +13,7 @@ const ServiceDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         setService(data);
-        console.log(data);
+        // console.log(data);
       });
   }, [id]);
   const {
@@ -26,6 +26,15 @@ const ServiceDetails = () => {
       ...data,
     };
     console.log(orderData);
+    fetch(`http://localhost:5000/usersOrder`, {
+      method: "post",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(orderData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
   };
 
   return (
@@ -52,13 +61,13 @@ const ServiceDetails = () => {
               <form onSubmit={handleSubmit(onSubmit)}>
                 <input
                   {...register("email")}
-                  defaultValue=""
+                  defaultValue={}
                   placeholder="email"
                   className="p-1 m-2 w-100"
                 />
                 <input
                   {...register("text")}
-                  defaultValue=""
+                  defaultValue={}
                   placeholder="name"
                   className="p-1 m-2 w-100"
                 />
