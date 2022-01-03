@@ -34,7 +34,7 @@ const Navbar = () => {
               <Link to="/contact ">
                 <li class="nav-item mx-2">Contact</li>
               </Link>
-              <Link to="/home ">
+              <Link to="/login ">
                 <li class="nav-item mx-2">LogIn</li>
               </Link>
             </ul>
