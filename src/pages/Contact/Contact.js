@@ -20,7 +20,7 @@ const Contact = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className='row my-5'>
+            <div className='row w-100 my-5'>
             <div className='col-sm-12 col-md-5 col-lg-5 px-5'>
                 <div className='ps-5'>
                     <h2>Contact Info</h2>

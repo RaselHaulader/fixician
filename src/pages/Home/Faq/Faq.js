@@ -3,7 +3,7 @@ import { Accordion } from 'react-bootstrap';
 
 const Faq = () => {
     return (
-        <div className='row my-5'>
+        <div className='row w-100 my-5'>
             <div className='col-sm-12 col-md-6 col-lg-6'>
                 <div>
                     <img src="https://i.ibb.co/4gmzkHm/1000-F-188974309-dyc-GZN5v-ISadmdu-DA4yz-SUg-PBT0bv-Wq-P.jpg" className='img-fluid' alt="" />
