@@ -10,6 +10,7 @@ import ServiceDetails from "./pages/Home/Services/ServiceDetails/ServiceDetails"
 import Dashboard from "./pages/Dashboard/Dashboard/DashBoard";
 import UserProfile from "./pages/Dashboard/UserProfile/UserProfile";
 import UserServices from "./pages/Dashboard/UserServices/UserServices";
+import RequireAuth from "./privateRouter/PrivateRouter";
 
 function App() {
   return (
@@ -20,10 +21,27 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/explore" element={<Explore />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/dashboard/userProfile" element={<UserProfile />} />
-        <Route path="/dashboard/userServices" element={<UserServices />} />
-        <Route path="/allServices/:id" element={<ServiceDetails />} />
+        <Route path="/dashboard" element={
+          <RequireAuth>
+            <Dashboard></Dashboard>
+          </RequireAuth>
+        } >
+          <Route path="/dashboard/userProfile" element={
+            <RequireAuth>
+              <UserProfile />
+            </RequireAuth>
+          } />
+          <Route path="/dashboard/userServices" element={
+            <RequireAuth>
+              <UserServices />
+            </RequireAuth>
+          } />
+        </Route>
+          <Route path="/allServices/:id" element={
+            <RequireAuth>
+              <ServiceDetails />
+            </RequireAuth>
+          } />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
