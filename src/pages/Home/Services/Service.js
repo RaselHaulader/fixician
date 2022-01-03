@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Service = ({ service }) => {
-  const { name, img, description } = service;
+  const { name, _id, img, description } = service;
   return (
     <div className="service-container">
       <div className="row">
@@ -14,7 +14,7 @@ const Service = ({ service }) => {
         <div className="info-container col-md-6 px-5">
           <h2 className="fw-bold">{name}</h2>
           <p className="pt-3 ">{description}</p>
-          <Link to="/serviceDetails">
+          <Link to={`/allServices/${_id}`}>
             {" "}
             <Button className="mt-2 fw-bold" variant="secondary">
               Read More
