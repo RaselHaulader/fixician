@@ -1,7 +1,6 @@
 .bashboard-manu {
     height: 100vh;
     width: 240px;
-    position: fixed;
     overflow-y: auto;
     border-right: 2px solid #ddd;
 }
@@ -18,7 +17,8 @@
     font-weight: 600;
     text-align: start;
     padding: 5px 0;
-    transition: all 0.2s;
+   
+    border-right: 4px solid rgba(44, 199, 226, 0);
 }
 
 .active {

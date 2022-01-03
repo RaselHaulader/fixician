@@ -4,8 +4,7 @@ import "./UserProfile.css";
 const UserProfile = () => {
   return (
     <div>
-      <div className="container">
-        <div className="row">
+        <div className="row w-100">
           <div className="profile d-flex justify-content-center align-items-center flex-column">
             <div className="user-img text-center pb-5">
               <img
@@ -40,7 +39,6 @@ const UserProfile = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

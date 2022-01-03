@@ -1,13 +1,15 @@
 import React from "react";
 import "./Dashboard.css";
 import { NavLink, Outlet } from "react-router-dom";
+import Navbar from "../../Shared/Navbar/Navbar";
 
 const Dashboard = () => {
   return (
-    <div className="">
-      <div className="dashboard">
-        <div className="row">
-          <div className="col-md-4">
+    <div>
+      <Navbar></Navbar>
+      <div className="dashboard container">
+        <div className="row w-100">
+          <div className=" col-md-4">
             <div className="bashboard-manu p-1">
               <div className="all-menu mt-5">
                 {/* user profile start here */}

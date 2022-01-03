@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Explore.css';
 import { Button, Card } from 'react-bootstrap';
 import Navbar from '../Shared/Navbar/Navbar';
+import { Link } from 'react-router-dom';
 
 const Explore = () => {
     const [services, setServices] = useState([]);
@@ -12,12 +13,10 @@ const Explore = () => {
             .then(res => res.json())
             .then(data => setServices(data))
     })
-
     return (
         <div>
-             <Navbar></Navbar>
+            <Navbar></Navbar>
             <div className="explore-container">
-
                 {
                     services.map((service, _id) => (
                         <div className="service">
@@ -26,7 +25,7 @@ const Explore = () => {
                                 <Card.Body>
                                     <h3 className='my-3 text-center'>{service.name}</h3>
                                     <p>{service.description}</p>
-                                    <Button className="mt-2 fw-normal" variant="warning">Read More</Button>
+                                    <Link to='/serviceDetails' > <Button className="mt-2 fw-normal" variant="warning">Read More</Button></Link>
                                 </Card.Body>
                             </Card>
                         </div>

@@ -4,8 +4,9 @@ import { Button, Form } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import register from '../../../Images/Register/register.jpg';
 import Navbar from '../../Shared/Navbar/Navbar';
+import useFirebase from '../../../Hooks/useFirebase';
 const Register = () => {
-
+    const {createAccount,updateProfile,saveUserInfo, auth} = useFirebase()
     const nameRef = useRef()
     const emailRef = useRef()
     const passRef = useRef()
@@ -14,11 +15,27 @@ const Register = () => {
     const handleRegister = (e) => {
         e.preventDefault()
         const name = nameRef.current.value;
-        const email = emailRef.current.value
-        const pass = passRef.current.value
-        const passConfirm = passConfirmRef.current.value
-        if (email && pass && name&&passConfirm ) {
+        const email = emailRef.current.value;
+        const pass = passRef.current.value;
+        const passConfirm = passConfirmRef.current.value;        
+        if (email && pass && name && passConfirm) {
             console.log(emailRef.current.value, passRef.current.value)
+            createAccount(email, pass)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    console.log(user)
+                    updateProfile(auth.currentUser, {
+                        displayName: name
+                    }).then(() => {
+                        //save user to db
+                        saveUserInfo({ name: name, email: email })
+                    }).catch((error) => {
+
+                    })
+                })
+                .catch((error) => {
+                    console.log(error.message);
+                });
         }
     }
     return (
