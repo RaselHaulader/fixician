@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import './Login.css';
 import login from '../../../Images/Login/login.jpg';
 import { Button, Form } from 'react-bootstrap';
-import { navigate, NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from '../../Shared/Navbar/Navbar';
 import useFirebase from '../../../Hooks/useFirebase';
 import { useDispatch } from 'react-redux';
@@ -17,6 +17,7 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
+    
     const saveUserInfo = (data) => {
         axios.post('http://localhost:5000/saveUser', data)
             .then(res => console.log(res))
