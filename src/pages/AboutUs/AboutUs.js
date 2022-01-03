@@ -7,27 +7,36 @@ const AboutUs = () => {
     <section>
       <Navbar></Navbar>
       <div className="container">
-        <h1 className="py-5">About Us</h1>
-        <div className="row d-flex align-items-center">
+        <h1 className="py-5 text-center">About Us</h1>
+        <div className="row">
           <div className="col-md-8">
             <div className="left-side-text">
               <h4>Our Advantages</h4>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Ducimus exercitationem quidem harum laborum quod velit, vel iste
-                minus praesentium totam! Labore temporibus voluptatem fugit
-                sint! Deserunt eos consequuntur magnam ipsum natus, vel
-                consequatur fugit voluptatem recusandae suscipit autem saepe
-                similique nam voluptatum delectus totam? Illum, voluptates
-                repellendus. Iusto dolor delectus nobis error facilis nemo
-                dolorem. Similique id itaque dolor quaerat illum autem ipsam
-                blanditiis quo nihil asperiores excepturi voluptates qui,{" "}
+                Fixitian is dedicated to providing our clients to meet their
+                business objectives faster and more cost effectively.
+                Traditional outsourcing concentrates on non-core tasks being
+                shipped out, whereas W3Engineers outsourced development is
+                targeted at the core tasks, the more critical part of your
+                organization. Our outsourcing is built on the idea of having a
+                skilled knowledge force at a remote location, for a fraction of
+                the original costs.
+              </p>
+              <p>
+                We are specialized in software and web application development
+                services such as content distribution & management systems
+                development, e-commerce software programming, web portals and
+                websites development, mobile application development plus many
+                others. Java, .Net, PHP software developers in our company are
+                also experienced in developing major enterprise applications
+                such as CRM & ERP software, Knowledge Management, Business
+                Intelligence software.
               </p>
               <button className="about-btn">Read More</button>
             </div>
           </div>
           <div className="col-md-4">
-            <div className="right-side-img">
+            <div className="right-side-img mt-3">
               <img
                 src="https://airvice.codelayers.net/images/2021/06/16/about-img-1.jpg"
                 className="img-fluid"
