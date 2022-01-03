@@ -1,12 +1,14 @@
-import React from 'react';
-import Services from '../Services/Services';
+import React from "react";
+import ServiceDetails from "../Services/ServiceDetails/ServiceDetails";
+import Services from "../Services/Services";
 
 const Home = () => {
-    return (
-        <div>
-            <Services></Services>
-        </div>
-    );
+  return (
+    <div>
+      <Services></Services>
+      <ServiceDetails />
+    </div>
+  );
 };
 
 export default Home;
