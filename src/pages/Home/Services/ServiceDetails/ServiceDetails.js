@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { useForm } from "react-hook-form";
+import Navbar from "../../../Shared/Navbar/Navbar";
+import "./ServiceDetails.css";
 
 const ServiceDetails = () => {
   const { id } = useParams();
@@ -28,67 +30,64 @@ const ServiceDetails = () => {
 
   return (
     <div>
-      <div className="container">
+      <Navbar />
+      <div className="container py-5">
         <div className="row">
-          <div className="col-md-7">
+          <div className="col-md-8">
             <div className="details">
               <div className="details-img">
                 <img class="img-fluid" src={data?.imgBack} alt="details-img" />
               </div>
-              <h3 className="py3">{data?.name}</h3>
-              <strong className="py3">Price: ${data?.price}</strong>
-              <p className="py3">{data?.description}</p>
+              <h3 className="py-3">{data?.name}</h3>
+              <strong>Price: ${data?.price}</strong>
+              <p className="py-3">{data?.description}</p>
             </div>
           </div>
-          <div className="col-md-5">
-            <div className="order text-center py-3">
+          <div className="col-md-4">
+            <div className="booking-from text-center py-3 ms-2">
               <form onSubmit={handleSubmit(onSubmit)}>
                 <input
                   {...register("email")}
                   defaultValue=""
                   placeholder="email"
-                  className="p-2 m-2 w-50"
+                  className="p-1 m-2 w-100"
                 />
                 <input
                   {...register("text")}
                   defaultValue=""
                   placeholder="name"
-                  className="p-2 m-2 w-50"
+                  className="p-1 m-2 w-100"
                 />
                 <input
                   {...register("product")}
                   placeholder="Product Name"
                   defaultValue=""
-                  className="p-2 m-2 w-50"
+                  className="p-1 m-2 w-100"
                 />
                 <br />
                 <input
                   {...register("address")}
                   placeholder="address"
                   type="address"
-                  className="p-2 m-2 w-50"
+                  className="p-1 m-2 w-100"
                 />
                 <br />
                 <input
                   {...register("phone")}
                   placeholder="Phone"
                   type="number"
-                  className="p-2 m-2 w-50"
+                  className="p-1 m-2 w-100"
                 />
                 <input
                   {...register("price")}
                   defaultValue=""
                   placeholder="price"
-                  className="p-2 m-2 w-50"
+                  className="p-1 m-2 w-100"
                 />
                 <br />
                 {errors.exampleRequired && <span>This field is required</span>}
 
-                <input
-                  type="submit"
-                  value="Book Now"
-                  className="common-btn pt-2"
-                />
+                <input type="submit" value="Book Now" className="booking-btn" />
               </form>
             </div>
           </div>
