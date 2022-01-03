@@ -10,6 +10,7 @@ import Explore from "./pages/Explore/Explore";
 
 function App() {
   return (
+<<<<<<< HEAD
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -18,6 +19,13 @@ function App() {
       </Routes>
     </BrowserRouter>
 
+=======
+    <div className="App">
+      <h1>Fixician</h1>
+      <h2>MD. SUJAN SHAIKH</h2>
+      <h2>MD. SUJAN</h2>
+    </div>
+>>>>>>> sujanShaikh
   );
 }
 
