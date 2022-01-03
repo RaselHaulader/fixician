@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './Register.css';
 import { Button, Form } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-
 import register from '../../../Images/Register/register.jpg';
 import Navbar from '../../Shared/Navbar/Navbar';
 const Register = () => {
+
+    const nameRef = useRef()
+    const emailRef = useRef()
+    const passRef = useRef()
+    const passConfirmRef = useRef()
+
+    const handleRegister = (e) => {
+        e.preventDefault()
+        const name = nameRef.current.value;
+        const email = emailRef.current.value
+        const pass = passRef.current.value
+        const passConfirm = passConfirmRef.current.value
+        if (email && pass && name&&passConfirm ) {
+            console.log(emailRef.current.value, passRef.current.value)
+        }
+    }
     return (
         <div>
             <Navbar></Navbar>
@@ -15,26 +30,26 @@ const Register = () => {
                     <img className="w-100 img-fluid" src={register} alt="" />
                 </div>
                 <div>
-                    <Form className="form-bg">
+                    <Form onSubmit={handleRegister} className="form-bg">
                         <div className="mt-5 mb-3">
                             <label for="exampleInputEmail1" className="form-label">Enter Your name</label>
-                            <input type="text" className="form-control w-50" placeholder='Name' id="exampleInputEmail1" aria-describedby="emailHelp" />
+                            <input required ref={nameRef} type="text" className="form-control w-50" placeholder='Name' id="exampleInputEmail1" aria-describedby="emailHelp" />
                         </div>
                         <div className="mb-3">
                             <label for="exampleInputEmail1" className="form-label">Enter Your Email</label>
-                            <input type="email" className="form-control w-50" placeholder='Email' id="exampleInputEmail1" aria-describedby="emailHelp" />
+                            <input required ref={emailRef} type="email" className="form-control w-50" placeholder='Email' id="exampleInputEmail1" aria-describedby="emailHelp" />
                         </div>
                         <div className="mb-3 ">
                             <label for="exampleInputPassword" className="form-label">Enter Your Password</label>
-                            <input type="password" className="form-control w-50 border" placeholder='Password' id="exampleInputPassword1" />
+                            <input required ref={passRef} type="password" className="form-control w-50 border" placeholder='Password' id="exampleInputPassword1" />
                         </div>
                         <div className="mb-3 ">
                             <label for="exampleInputPassword1" className="form-label">Re-enter Your Password</label>
-                            <input type="password" className="form-control w-50 border" placeholder='Re-enter Password' id="exampleInputPassword1" />
+                            <input required ref={passConfirmRef} type="password" className="form-control w-50 border" placeholder='Re-enter Password' id="exampleInputPassword1" />
                         </div>
                         <Button type="submit" className="submit-btn" variant="primary">Register</Button>
                         <NavLink to="/login" >
-                            <button type="button"  className="d-block text-decoration-none btn btn-link ms-5 mt-3">Already Registered? Please Login</button>             
+                            <button type="button" className="d-block text-decoration-none btn btn-link ms-5 mt-3">Already Registered? Please Login</button>
                         </NavLink>
                     </Form>
                 </div>
