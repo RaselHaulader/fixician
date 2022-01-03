@@ -20,19 +20,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/explore" element={<Explore />} />
-<<<<<<< HEAD
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard/userProfile" element={<UserProfile />} />
         <Route path="/dashboard/userServices" element={<UserServices />} />
         <Route path="/allServices/:id" element={<ServiceDetails />} />
-=======
-        <Route path="/dashboard" element={<Dashboard />}>
-          <Route path="/dashboard/userProfile" element={<UserProfile />} />
-          <Route path="/dashboard/userServices" element={<UserServices />} />
-        </Route>
-
-        <Route path="/serviceDetails" element={<ServiceDetails />} />
->>>>>>> e2a67890e43bb96221c2fc22c1b4e21b19aa8ce3
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
