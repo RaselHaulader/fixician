@@ -17,7 +17,7 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
-    
+
     const saveUserInfo = (data) => {
         axios.post('http://localhost:5000/saveUser', data)
             .then(res => console.log(res))
@@ -30,6 +30,9 @@ const Login = () => {
                 name: user.displayName,
                 email: user.email
             }
+            saveUserInfo(userInfo)
+            dispatch(addUserAuth(user))
+            navigate(from, { replace: true });
         }).catch((error) => {
             console.log(error);
         });

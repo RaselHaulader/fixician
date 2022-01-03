@@ -5,29 +5,33 @@ import { NavLink } from 'react-router-dom';
 import register from '../../../Images/Register/register.jpg';
 import Navbar from '../../Shared/Navbar/Navbar';
 import useFirebase from '../../../Hooks/useFirebase';
+import axios from 'axios';
 const Register = () => {
-    const {createAccount,updateProfile,saveUserInfo, auth} = useFirebase()
+    const { createAccount, updateProfile, auth } = useFirebase()
     const nameRef = useRef()
     const emailRef = useRef()
     const passRef = useRef()
     const passConfirmRef = useRef()
-
+    const saveUserInfo = (data) => {
+        axios.post('http://localhost:5000/saveUser', data)
+            .then(res => console.log(res))
+    }
     const handleRegister = (e) => {
         e.preventDefault()
         const name = nameRef.current.value;
         const email = emailRef.current.value;
         const pass = passRef.current.value;
-        const passConfirm = passConfirmRef.current.value;        
+        const passConfirm = passConfirmRef.current.value;
         if (email && pass && name && passConfirm) {
             console.log(emailRef.current.value, passRef.current.value)
             createAccount(email, pass)
                 .then((userCredential) => {
                     const user = userCredential.user;
-                    console.log(user)
                     updateProfile(auth.currentUser, {
                         displayName: name
                     }).then(() => {
                         //save user to db
+                        console.log(user)
                         saveUserInfo({ name: name, email: email })
                     }).catch((error) => {
 

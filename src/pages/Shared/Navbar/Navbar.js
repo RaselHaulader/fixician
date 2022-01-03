@@ -1,7 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import useFirebase from "../../../Hooks/useFirebase";
 import "./Navbar.css";
 const Navbar = () => {
+  const {logOut} = useFirebase()
+  const user = useSelector(state=> state.user.userAuth)
   return (
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -43,6 +47,9 @@ const Navbar = () => {
               <Link to="/login ">
                 <li class="nav-item mx-2">Login</li>
               </Link>
+
+            { user?.email &&  <p onClick={ logOut} class="nav-item mx-2">LogOut</p>}
+
             </ul>
           </div>
         </div>
