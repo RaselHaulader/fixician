@@ -1,31 +1,19 @@
 import "./App.css";
 import Home from "./pages/Home/Home/Home";
-import {
-  BrowserRouter,
-  Routes,
-  Route
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Explore from "./pages/Explore/Explore";
-
+import AboutUs from "./pages/AboutUs/AboutUs";
 
 function App() {
   return (
-<<<<<<< HEAD
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/explore" element={<Explore />} />
+        <Route path="/aboutUs" element={<AboutUs />} />
       </Routes>
     </BrowserRouter>
-
-=======
-    <div className="App">
-      <h1>Fixician</h1>
-      <h2>MD. SUJAN SHAIKH</h2>
-      <h2>MD. SUJAN</h2>
-    </div>
->>>>>>> sujanShaikh
   );
 }
 
