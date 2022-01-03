@@ -7,8 +7,6 @@ const auth = getAuth();
 const GoogleProvider = new GoogleAuthProvider();
 
 const useFirebase = () => {
-
-  
    
     const googleSignIn = () => {
 
@@ -31,12 +29,11 @@ const useFirebase = () => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
                
-               
             } else {
               
             }
         });
-    }, [user])
+    }, [])
 
     return {
         googleSignIn,

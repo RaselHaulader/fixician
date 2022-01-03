@@ -2,26 +2,60 @@ import React, { useRef } from 'react';
 import './Login.css';
 import login from '../../../Images/Login/login.jpg';
 import { Button, Form } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { navigate, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from '../../Shared/Navbar/Navbar';
+import useFirebase from '../../../Hooks/useFirebase';
+import { useDispatch } from 'react-redux';
+import { addUserAuth } from '../../../redux/slices/userSlices';
+import axios from 'axios';
 
 const Login = () => {
-    
+    const dispatch = useDispatch()
+    const { emailLogin, googleSignIn } = useFirebase()
     const emailRef = useRef()
     const passRef = useRef()
-    const handleLogin=(e)=>{
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+    const saveUserInfo = (data) => {
+        axios.post('http://localhost:5000/saveUser', data)
+            .then(res => console.log(res))
+    }
+    const handleGoogleSignIn = () => {
+        googleSignIn().then(({ user }) => {
+            // save info to db
+            console.log(user);
+            const userInfo = {
+                name: user.displayName,
+                email: user.email
+            }
+        }).catch((error) => {
+            console.log(error);
+        });
+    }
+    const handleLogin = (e) => {
         e.preventDefault()
         const email = emailRef.current.value;
-        const pass =passRef.current.value
-        if(email&&pass){
-              console.log(emailRef.current.value,passRef.current.value)
+        const pass = passRef.current.value
+        if (email && pass) {
+            console.log(emailRef.current.value, passRef.current.value)
+            emailLogin(email, pass)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    console.log(user)
+                    dispatch(addUserAuth(user))
+                    navigate(from, { replace: true });
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         }
     }
     return (
         <div>
             <Navbar></Navbar>
             <h1 className='text-center fw-bold fs-2 mt-5 mb-3'>Please Login!</h1>
-            <div className='login-container'>
+            <div className='login-container '>
                 <div>
                     <img className="w-100 img-fluid" src={login} alt="" />
                 </div>
@@ -35,9 +69,10 @@ const Login = () => {
                             <label for="exampleInputPassword1" className="form-label">Password</label>
                             <input required ref={passRef} type="password" className="form-control w-50 border" placeholder='Enter Your Password' id="exampleInputPassword1" />
                         </div>
-                        <Button type="submit" className="submit-btn"  variant="primary">Login</Button>
-                        <NavLink to="/register" >
-                            <button type="button"   className="d-block text-decoration-none btn btn-link ms-5 mt-3">New User? Please Register</button>             
+                        <Button type="submit" className="submit-btn" variant="primary">Login</Button>
+                        <p onClick={handleGoogleSignIn} className='text-primary ms-5 ps-5 pt-2'>Sign With google</p>
+                        <NavLink className='text-decoration-none' to="/register" >
+                            <button type="button" className="py-0 my-0 d-block text-decoration-none btn btn-link ms-5 mt-3">New User? Please Register</button>
                         </NavLink>
                     </Form>
                 </div>
