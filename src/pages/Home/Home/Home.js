@@ -5,6 +5,7 @@ import Banner from "../Banner/Banner";
 import Counter from "../Counter/Counter";
 import Experts from "../Experts/Experts";
 import Faq from "../Faq/Faq";
+import Review from "../Review/Review";
 import Services from "../Services/Services";
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
       <Services></Services>
       <Explore></Explore>
       <Faq></Faq>
+      <Review></Review>
     </div>
   );
 };
