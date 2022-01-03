@@ -61,13 +61,13 @@ const ServiceDetails = () => {
               <form onSubmit={handleSubmit(onSubmit)}>
                 <input
                   {...register("email")}
-                  defaultValue={}
+                  defaultValue=""
                   placeholder="email"
                   className="p-1 m-2 w-100"
                 />
                 <input
                   {...register("text")}
-                  defaultValue={}
+                  defaultValue="git"
                   placeholder="name"
                   className="p-1 m-2 w-100"
                 />
