@@ -34,6 +34,12 @@ const Navbar = () => {
               <Link to="/home ">
                 <li class="nav-item mx-2">Contact</li>
               </Link>
+              <Link to="/Dashboard ">
+                <li class="nav-item mx-2">Dashboard</li>
+              </Link>
+              <Link to="/serviceDetails ">
+                <li class="nav-item mx-2">Service Details</li>
+              </Link>
               <Link to="/home ">
                 <li class="nav-item mx-2">LogIn</li>
               </Link>
