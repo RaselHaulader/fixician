@@ -21,22 +21,6 @@ const Dashboard = () => {
                         paddingLeft: "10px",
                         background: "none",
                       }}
-                      to={`/dashboard`}
-                    >
-                      All Service
-                    </NavLink>
-                  </li>
-                </div>
-
-                <div className="all-order">
-                  <li className="admin-menu p-2">
-                    <NavLink
-                      style={{
-                        textDecoration: "none",
-                        color: "#333",
-                        paddingLeft: "10px",
-                        background: "none",
-                      }}
                       to={`/dashboard/userProfile`}
                     >
                       Profile
@@ -67,9 +51,9 @@ const Dashboard = () => {
                         paddingLeft: "10px",
                         background: "none",
                       }}
-                      to={`/dashboard/mangeProduct`}
+                      to={`/dashboard/userReview`}
                     >
-                      Mange Services
+                      Review
                     </NavLink>
                   </li>
                 </div>
