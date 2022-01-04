@@ -74,7 +74,7 @@ const Login = () => {
                             <input required ref={passRef} type="password" className="form-control w-50 border" placeholder='Enter Your Password' id="exampleInputPassword1" />
                         </div>
                         <Button type="submit" className="submit-btn" variant="primary">Login</Button>
-                        <p onClick={handleGoogleSignIn} className='text-primary ms-5 ps-5 pt-2'>Sign With google</p>
+                        <p style={{cursor:'pointer'}} onClick={handleGoogleSignIn} className='text-primary ms-5 ps-5 pt-2'>Sign With google</p>
                         <NavLink className='text-decoration-none' to="/register" >
                             <button type="button" className="py-0 my-0 d-block text-decoration-none btn btn-link ms-5 mt-3">New User? Please Register</button>
                         </NavLink>
