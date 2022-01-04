@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import './Register.css';
 import { Button, Form } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import register from '../../../Images/Register/register.jpg';
 import Navbar from '../../Shared/Navbar/Navbar';
 import useFirebase from '../../../Hooks/useFirebase';
@@ -12,6 +12,7 @@ const Register = () => {
     const emailRef = useRef()
     const passRef = useRef()
     const passConfirmRef = useRef()
+    const navigate = useNavigate();
     const saveUserInfo = (data) => {
         axios.post('http://localhost:5000/saveUser', data)
             .then(res => console.log(res))
@@ -33,6 +34,7 @@ const Register = () => {
                         //save user to db
                         console.log(user)
                         saveUserInfo({ name: name, email: email })
+                        navigate("/", { replace: true });
                     }).catch((error) => {
 
                     })

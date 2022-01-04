@@ -14,7 +14,7 @@ const UserReview = () => {
     if (data.displayName === "") {
       data.displayName = user.displayName;
     }
-    fetch(`http://localhost:5000/review`, {
+    fetch(`https://desolate-hamlet-19197.herokuapp.com/review`, {
       method: "post",
       headers: {
         "content-type": "application/json",

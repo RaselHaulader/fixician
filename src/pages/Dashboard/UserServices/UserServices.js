@@ -10,7 +10,7 @@ const UserServices = () => {
   const [Loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/usersOrder/${user.email}`)
+    fetch(`https://desolate-hamlet-19197.herokuapp.com/usersOrder/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyOrder(data);
@@ -22,7 +22,7 @@ const UserServices = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("are you sure, delete this package?");
     if (proceed) {
-      fetch(`http://localhost:5000/deleteOrder/${id}`, {
+      fetch(`https://desolate-hamlet-19197.herokuapp.com/deleteOrder/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

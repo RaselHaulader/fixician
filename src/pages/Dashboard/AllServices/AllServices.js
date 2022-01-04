@@ -7,7 +7,7 @@ const AllServices = () => {
 
   // load data
   useEffect(() => {
-    fetch("http://localhost:5000/allServices")
+    fetch("https://desolate-hamlet-19197.herokuapp.com/allServices")
       .then((res) => res.json())
       .then((data) => setServices(data));
   });
@@ -16,7 +16,7 @@ const AllServices = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("are you sure, delete this package?");
     if (proceed) {
-      fetch(`http://localhost:5000/allServices/${id}`, {
+      fetch(`https://desolate-hamlet-19197.herokuapp.com/allServices/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

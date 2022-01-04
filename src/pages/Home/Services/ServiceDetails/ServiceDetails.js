@@ -12,7 +12,7 @@ const ServiceDetails = () => {
   console.log(id);
   const [service, setService] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/allServices/${id}`)
+    fetch(`https://desolate-hamlet-19197.herokuapp.com/allServices/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setService(data);
@@ -32,7 +32,7 @@ const ServiceDetails = () => {
     } else if (data.price === "") {
       data.price = service.price;
     }
-    fetch(`http://localhost:5000/usersOrder`, {
+    fetch(`https://desolate-hamlet-19197.herokuapp.com/usersOrder`, {
       method: "post",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
