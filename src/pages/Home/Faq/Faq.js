@@ -54,4 +54,3 @@ const Faq = () => {
 
 export default Faq;
 
-// yellow : #FFC000 blue: #0338AB
