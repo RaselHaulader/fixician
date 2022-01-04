@@ -21,27 +21,39 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/explore" element={<Explore />} />
-        <Route path="/dashboard" element={
-          <RequireAuth>
-            <Dashboard></Dashboard>
-          </RequireAuth>
-        } >
-          <Route path="/dashboard/userProfile" element={
+        <Route
+          path="/dashboard"
+          element={
             <RequireAuth>
-              <UserProfile />
+              <Dashboard></Dashboard>
             </RequireAuth>
-          } />
-          <Route path="/dashboard/userServices" element={
-            <RequireAuth>
-              <UserServices />
-            </RequireAuth>
-          } />
+          }
+        >
+          <Route
+            path="/dashboard/userProfile"
+            element={
+              <RequireAuth>
+                <UserProfile />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/dashboard/userServices"
+            element={
+              <RequireAuth>
+                <UserServices />
+              </RequireAuth>
+            }
+          />
         </Route>
-          <Route path="/allServices/:id" element={
+        <Route
+          path="/allServices/:id"
+          element={
             <RequireAuth>
               <ServiceDetails />
             </RequireAuth>
-          } />
+          }
+        />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
