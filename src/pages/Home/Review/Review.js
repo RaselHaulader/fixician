@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Review.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
@@ -9,6 +9,12 @@ import 'swiper/css/scrollbar';
 import { Card } from 'react-bootstrap';
 
 const Review = () => {
+    const [reviews, setReview] = useState([])
+    useEffect(() => {
+        fetch("https://desolate-hamlet-19197.herokuapp.com/review")
+            .then((res) => res.json())
+            .then((data) => setReview(data));
+    }, [])
     return (
         <div className='row mx-5'>
             <h2 className='text-center my-5 pb-3' style={{ color: "#0338AB" }}>Our Happy Customers</h2>
@@ -23,56 +29,20 @@ const Review = () => {
                     onSwiper={(swiper) => console.log(swiper)}
                     onSlideChange={() => console.log('slide change')}
                 >
-                    <SwiperSlide>
-                        <Card>
-                        <Card.Img variant="top" src="https://i.ibb.co/4gmzkHm/1000-F-188974309-dyc-GZN5v-ISadmdu-DA4yz-SUg-PBT0bv-Wq-P.jpg"/>
-                            <Card.Body>
-                                <Card.Title>Card title</Card.Title>
-                                <Card.Text>
-                                    This is a longer card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                    <Card>
-                        <Card.Img variant="top" src="https://i.ibb.co/4gmzkHm/1000-F-188974309-dyc-GZN5v-ISadmdu-DA4yz-SUg-PBT0bv-Wq-P.jpg"/>
-                            <Card.Body>
-                                <Card.Title>Card title</Card.Title>
-                                <Card.Text>
-                                    This is a longer card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </SwiperSlide>
-                    <SwiperSlide> 
-                    <Card>
-                        <Card.Img variant="top" src="https://i.ibb.co/4gmzkHm/1000-F-188974309-dyc-GZN5v-ISadmdu-DA4yz-SUg-PBT0bv-Wq-P.jpg"/>
-                            <Card.Body>
-                                <Card.Title>Card title</Card.Title>
-                                <Card.Text>
-                                    This is a longer card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                    <Card>
-                        <Card.Img variant="top" src="https://i.ibb.co/4gmzkHm/1000-F-188974309-dyc-GZN5v-ISadmdu-DA4yz-SUg-PBT0bv-Wq-P.jpg"/>
-                            <Card.Body>
-                                <Card.Title>Card title</Card.Title>
-                                <Card.Text>
-                                    This is a longer card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </SwiperSlide>
+                    {
+                        reviews.map(review => <SwiperSlide>
+                            <Card>
+                                <Card.Img variant="top" src="https://www.kindpng.com/picc/m/24-248253_user-profile-default-image-png-clipart-png-download.png" />
+                                <Card.Body>
+                                    <Card.Title>{review?.name}</Card.Title>
+                                    <Card.Text>
+                                        {review?.description}
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </SwiperSlide>)
+                    }
                     <br />
-                    ...
                 </Swiper>
             </div>
         </div>
