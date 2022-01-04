@@ -1,68 +1,8 @@
-.userServices{
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.code{
-    border: 2px dotted #00A9D1;
-    display: inline-block;
-    padding: 5px 20px;
-    letter-spacing: 3px;
-    text-align: center;
-   
-}
-.code h1{
-     font-size: 35px;
-     color: #00A9D1;
-}
-.user-text h3{
-    font-size: 25px;
-    font-weight: 700;
-}
-.user-text p{
-    font-size: 17px;
-    color: #333;
-    font-weight: 400;
-}
-.userSr-btn .facebook{
-    background: #116ce2;
-    border: none;
-    border-radius: 5px;
+.delete-btn{
+    padding: 5px 8px;
+    background: rgb(155, 0, 0) !important;
     color: #fff;
-    font-size: 18px;
-    padding: 7px 48px;
-    outline: none;
-    margin-right: 10px;
-
-}
-.userSr-btn .facebook:hover{
-     background: #1977F3;
-}
-.userSr-btn .copy{
-    background: #cc3d78;
     border: none;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 18px;
-    padding: 7px 48px;
     outline: none;
-}
-.userSr-btn .copy:hover{
-    background: #D24B83;
-}
-
-@media only screen and (max-width: 600px) {
-    .userSr-btn{
-        text-align: center;
-        margin: 0 auto;
-    }
-    .userSr-btn .facebook{
-        margin-left: 8px;
-    }
-    .userSr-btn .copy{
-        margin: 10px 0;
-        padding: 7px 45px;
-     }
+    cursor: pointer;
 }

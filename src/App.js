@@ -10,6 +10,7 @@ import ServiceDetails from "./pages/Home/Services/ServiceDetails/ServiceDetails"
 import Dashboard from "./pages/Dashboard/Dashboard/DashBoard";
 import UserProfile from "./pages/Dashboard/UserProfile/UserProfile";
 import UserServices from "./pages/Dashboard/UserServices/UserServices";
+import UserReview from "./pages/Dashboard/UserReview/UserReview";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/dashboard/userProfile" element={<UserProfile />} />
         <Route path="/dashboard/userServices" element={<UserServices />} />
         <Route path="/allServices/:id" element={<ServiceDetails />} />
+        <Route path="/dashboard/userReview" element={<UserReview />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
