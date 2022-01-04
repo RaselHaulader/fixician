@@ -5,7 +5,6 @@ const userSlice = createSlice({
     initialState: {
         userAuth: [],
         loading: true,
-        loading2: true,
     },
     reducers: {
         addUserAuth: (state, action) => {
@@ -17,10 +16,8 @@ const userSlice = createSlice({
         handleLoading: (state, action) => {
             state.loading = action.payload
         },
-        handleLoading2: (state, action) => {
-            state.loading2 = action.payload
-        },
+       
     }
 })
-export const { addUserAuth, removeUserAuth, handleLoading, handleLoading2 } = userSlice.actions
+export const { addUserAuth, removeUserAuth, handleLoading } = userSlice.actions
 export default userSlice.reducer

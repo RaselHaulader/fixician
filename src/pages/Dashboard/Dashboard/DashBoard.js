@@ -2,8 +2,10 @@ import React from "react";
 import "./Dashboard.css";
 import { NavLink, Outlet } from "react-router-dom";
 import Navbar from "../../Shared/Navbar/Navbar";
+import useFirebase from "../../../Hooks/useFirebase";
 
 const Dashboard = () => {
+  const { emailLogin} = useFirebase()
   return (
     <div>
       <Navbar></Navbar>

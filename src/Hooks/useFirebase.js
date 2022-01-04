@@ -2,7 +2,7 @@ import firebaseInit from "../Firebase/firebaseInit";
 import { getAuth, updateProfile, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useEffect } from "react";
 import axios from "axios";
-import { addUserAuth } from "../redux/slices/userSlices";
+import { addUserAuth, handleLoading } from "../redux/slices/userSlices";
 import { useDispatch } from "react-redux";
 
 firebaseInit()
@@ -34,8 +34,10 @@ const useFirebase = () => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 dispatch(addUserAuth(user))
+                dispatch(handleLoading(false))
             } else {
                 dispatch(addUserAuth([]))
+                dispatch(handleLoading(false))
             }
         });
     }, [])

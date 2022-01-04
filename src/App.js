@@ -11,8 +11,11 @@ import Dashboard from "./pages/Dashboard/Dashboard/DashBoard";
 import UserProfile from "./pages/Dashboard/UserProfile/UserProfile";
 import UserServices from "./pages/Dashboard/UserServices/UserServices";
 import RequireAuth from "./privateRouter/PrivateRouter";
+import UserReview from "./pages/Dashboard/UserReview/UserReview";
+import useFirebase from "./Hooks/useFirebase";
 
 function App() {
+  const { auth } = useFirebase();
   return (
     <BrowserRouter>
       <Routes>
@@ -42,6 +45,14 @@ function App() {
             element={
               <RequireAuth>
                 <UserServices />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/dashboard/userReview"
+            element={
+              <RequireAuth>
+                <UserReview></UserReview>
               </RequireAuth>
             }
           />
