@@ -4,6 +4,7 @@ import Navbar from "../../Shared/Navbar/Navbar";
 import Banner from "../Banner/Banner";
 import Counter from "../Counter/Counter";
 import Faq from "../Faq/Faq";
+import Review from "../Review/Review";
 import Services from "../Services/Services";
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
       <Services></Services>
       <Counter></Counter>
       <Faq></Faq>
+      <Review></Review>
       <Footer></Footer>
     </div>
   );
